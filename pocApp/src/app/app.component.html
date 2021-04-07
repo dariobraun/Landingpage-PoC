@@ -1,0 +1,76 @@
+<h1>PoC</h1>
+
+<nav>
+  <ul>
+    <li routerLink="/">Home</li>
+    <li routerLink="/about">About</li>
+    <li routerLink="/blog">Blog</li>
+  </ul>
+</nav>
+
+<div class="custom-signup">
+  <h3>Become a member of the soccer community</h3>
+  <form id="my-form" action="https://formspree.io/f/mnqlqvnj" method="POST">
+    <input type="email" name="email" placeholder="Your work email address" />
+    <button id="my-form-button">Subscribe to newsletter</button>
+    <p id="my-form-status"></p>
+  </form>
+</div>
+
+<div class="custom-signup">
+  <!-- Begin Mailchimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form
+      action="https://adesso.us1.list-manage.com/subscribe/post?u=5b80d72d588380f77f4c64db8&amp;id=003d658b9d"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate"
+      target="_blank"
+      novalidate
+    >
+      <div id="mc_embed_signup_scroll">
+        <input
+          type="email"
+          value=""
+          name="EMAIL"
+          class="email"
+          id="mce-EMAIL"
+          placeholder="email address"
+          required
+        />
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px" aria-hidden="true">
+          <input
+            type="text"
+            name="b_5b80d72d588380f77f4c64db8_003d658b9d"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+        <div class="clear">
+          <input
+            type="submit"
+            value="Subscribe"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+            class="button"
+          />
+        </div>
+      </div>
+    </form>
+    <img id="bg-img" src="https://source.unsplash.com/random" />
+  </div>
+  <!--End mc_embed_signup-->
+</div>
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">Error :(</div>
+<div *ngIf="blogArticles">
+  <div *ngFor="let article of blogArticles">
+    <p>{{ article.title }}</p>
+    <p>{{ article.content }}</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
